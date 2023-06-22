@@ -117,3 +117,11 @@ The operation callback can be any mathematical operation, such as addition, subt
 use arrow functions and correct types (primitive types, function types)
 */
 
+const stackup = (x: number, y: number) => {
+    return x*y ;
+}
+
+const calculate = (num1: number, num2: number ,action: (x: number, y: number ) => number) => {
+    console.log('Time to stack up to: $' + action(num1, num2));
+}
+calculate(2000,4,stackup);
