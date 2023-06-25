@@ -1,6 +1,7 @@
 //Sometimes, we wish to retrieve, manipulate and enforce the types of objects in our code
 // the keywords are "typeof", "keyof" and "as"
 
+
 const weather = {
     date: new Date(),
     weather: 'sunny',
@@ -31,8 +32,8 @@ interface Cat {
   }
   
 interface Dog {
-name: string;
-bark: () => void;
+    name: string;
+    bark: () => void;
 }
 
 const petSound = (pet: Cat | Dog): void => {//pet is of type Cat or Dog
@@ -51,8 +52,31 @@ const petSound = (pet: Cat | Dog): void => {//pet is of type Cat or Dog
 //real application of type assertion:
 
 //here is a random object
-const randomObject = {
+const randomObject:unknown = {
     name: 'John',
     age: 25,
-    action: (action: string) => console.log(action),
+    isStudent: true,
+    hobbies: ['reading', 'coding', 'gaming'],
+    
+}
+
+//-------------------------------------------------------------------------------------------------//
+/**Time TO EXERCISE:
+
+1) being an unknown object, randomObject does not have a .hobbies property.
+
+2) Write a function that handles randomObject and returns the hobbies of the person as a string
+
+3) Use type assertion
+*/
+
+
+const school={
+    name: 'Carleton',
+    location: 'Ottawa',
+}
+
+const newSchool: typeof school = {
+    name: 'Uottawa',
+    location: 'Ottawa',
 }

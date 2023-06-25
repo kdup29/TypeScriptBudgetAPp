@@ -108,15 +108,16 @@ const clickHandler = () => {
 //5) time to practice
 
 /*
-Write a function called calculate that takes two numbers x and y and a callback function operation as parameters. 
-The calculate function should apply the operation callback to the numbers x and y and return the result.
+A) Write a function called calculate that takes two numbers x and y and a callback function operation as parameters. 
 
-The operation callback should take two numbers x and y as parameters and return a number that represents the result of the operation.
-The operation callback can be any mathematical operation, such as addition, subtraction, multiplication, or division.
+B) The calculate function should apply the operation callback to the numbers x and y and return the result (ex: add).
 
-use arrow functions and correct types (primitive types, function types)
+C) The operation callback can be any mathematical operation, such as addition, subtraction, multiplication, or division.
+
+D) use arrow functions and correct types (primitive types, function types)
 */
 
+//<<<<<<< HEAD
 const stackup = (x: number, y: number) => {
     return x*y ;
 }
@@ -125,3 +126,11 @@ const calculate = (num1: number, num2: number ,action: (x: number, y: number ) =
     console.log('Time to stack up to: $' + action(num1, num2));
 }
 calculate(2000,4,stackup);
+//=======
+// const applyOpperations = (x:number, y:number, operation:Function):number=>{
+//     return operation(x,y);
+// }
+
+// const adder = (x:number, y:number):number=>x+y
+// const add = applyOpperations(1,2,adder);
+// >>>>>>> ab4177221dbc7f05e2f9e5bc7f0cb2ec16ba0b45
