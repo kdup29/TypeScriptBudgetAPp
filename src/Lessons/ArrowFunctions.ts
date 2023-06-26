@@ -122,7 +122,7 @@ const stackup = (x: number, y: number) => {
     return x*y ;
 }
 
-const calculate = (num1: number, num2: number ,action: (x: number, y: number ) => number) => {
+const calculate = (num1: number, num2: number ,action: Function) => {
     console.log('Time to stack up to: $' + action(num1, num2));
 }
 calculate(2000,4,stackup);

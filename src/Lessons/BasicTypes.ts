@@ -200,3 +200,15 @@ C) Create a function (with correct typechecking) which takes in the spending and
 
 D) Export the type to be reused in other files
  */
+export type spending = {
+  amount: number,
+  category: "Food" | "Rent" | "Travel" | "Utilities" | "Wellness" | "Others",
+  description: string,
+  date: Date
+}
+const splurg = {amount: 30, category: "Food" as "Food", description: 'Mac and chees with oxtail', date: new Date("2023/7/10")};
+
+const printDetails = (expense: spending) => {
+  return (`spending of type ${expense.category}: ${expense.description} of ${expense.amount}€`);
+}
+printDetails(splurg);
