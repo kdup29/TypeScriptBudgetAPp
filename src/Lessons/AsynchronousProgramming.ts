@@ -117,5 +117,39 @@ const delayWithTryCatch = async (): Promise<string> => {
 */
 //console.log(await delayWithTryCatch())
 
-Input.closeStream();
+
   
+const userNumInput = async (): Promise<string> => {
+    const userEntry = await Input.Input('Enter an odd number: ');
+    const convEntry = parseInt(userEntry);
+
+    const result = new Promise<string>((resolve, reject) =>{
+        if (Number.isNaN(convEntry)) {
+            reject("It seems like you didn't enter a number, Please enter an odd number");
+        }
+
+        if ((convEntry % 2 ===0)) {
+            reject("It seems like you entered a pair number, Please enter an odd number");
+        }
+
+        setTimeout(() => {
+            resolve("The odd number you've entered is: " + convEntry);
+        });
+
+    })
+    return result;
+}
+
+const mainFunc = async (): Promise<string> => {
+    try {
+        const thaResult =await userNumInput();
+        return thaResult;
+    }
+    catch(error) {
+        return ('An error happened: ' + error);
+    }
+}
+
+console.log(await mainFunc());
+
+Input.closeStream();

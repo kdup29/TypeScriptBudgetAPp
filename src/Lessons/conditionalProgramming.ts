@@ -88,3 +88,11 @@ type Person={
   * 3. Use the array.map() function to create a new array of objects 
   * 4. Use a loop and a ternary operator to modify the array
 */
+
+const genArray = () => {
+  const ranArray : number[] = [];
+  for(let i=0; i<20; i++){
+    ranArray.push(Math.floor(Math.random() * 100) + 1)
+  }
+  return ranArray;  
+}
